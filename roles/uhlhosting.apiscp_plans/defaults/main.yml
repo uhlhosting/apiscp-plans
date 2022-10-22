@@ -5,3 +5,7 @@ plans:
     enabled: 1
   - name: basic
     enabled: 1
+  - name: Developer
+    enabled: 1
+  - name: Unmanaged
+    enabled: 1
