@@ -1,7 +1,7 @@
 ---
 - name: Recursively find template files
   ansible.builtin.find:
-    paths: "{{ role_path }}/templates"
+    paths: "{{ role_path }}/templates/"
     recurse: yes
   register: templates_list
 
