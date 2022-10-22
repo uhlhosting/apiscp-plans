@@ -1,0 +1,326 @@
+---
+
+- name: Restarting ApisCP
+  ansible.builtin.systemd:
+    state: restarted
+    daemon_reload: true
+    name: apiscp
+
+- name: Setting DEFAULT aliases vars
+  community.general.ini_file:
+    path: "{{ aliases }}"
+    section: DEFAULT
+    option: enabled
+    value: 1
+    state: present
+    no_extra_spaces: yes
+    mode: '0644'
+    backup: true
+
+- name: Setting DEFAULT auth vars
+  community.general.ini_file:
+    path: "{{ auth }}"
+    section: DEFAULT
+    option: enabled
+    value: 1
+    state: present
+    no_extra_spaces: yes
+    mode: '0644'
+    backup: true
+
+- name: Setting DEFAULT billing vars
+  community.general.ini_file:
+    path: "{{ billing }}"
+    section: DEFAULT
+    option: enabled
+    value: 1
+    state: present
+    no_extra_spaces: yes
+    mode: '0644'
+    backup: true
+
+- name: Setting DEFAULT crontab vars
+  community.general.ini_file:
+    path: "{{ crontab }}"
+    section: DEFAULT
+    option: enabled
+    value: 1
+    state: present
+    no_extra_spaces: yes
+    mode: '0644'
+    backup: true
+
+- name: Setting DEFAULT dns vars
+  community.general.ini_file:
+    path: "{{ dns }}"
+    section: DEFAULT
+    option: enabled
+    value: 1
+    state: present
+    no_extra_spaces: yes
+    mode: '0644'
+    backup: true
+
+- name: Setting DEFAULT ftp vars
+  community.general.ini_file:
+    path: "{{ ftp }}"
+    section: DEFAULT
+    option: enabled
+    value: 1
+    state: present
+    no_extra_spaces: yes
+    mode: '0644'
+    backup: true
+
+- name: Setting DEFAULT ipinfo6 vars
+  community.general.ini_file:
+    path: "{{ ipinfo6 }}"
+    section: DEFAULT
+    option: enabled
+    value: 1
+    state: present
+    no_extra_spaces: yes
+    mode: '0644'
+    backup: true
+
+- name: Setting DEFAULT metrics vars
+  community.general.ini_file:
+    path: "{{ metrics }}"
+    section: DEFAULT
+    option: enabled
+    value: 1
+    state: present
+    no_extra_spaces: yes
+    mode: '0644'
+    backup: true
+
+- name: Setting DEFAULT logs vars
+  community.general.ini_file:
+    path: "{{ logs }}"
+    section: DEFAULT
+    option: enabled
+    value: 1
+    state: present
+    no_extra_spaces: yes
+    mode: '0644'
+    backup: true
+
+- name: Setting DEFAULT mysql vars
+  community.general.ini_file:
+    path: "{{ mysql }}"
+    section: DEFAULT
+    option: enabled
+    value: 1
+    state: present
+    no_extra_spaces: yes
+    mode: '0644'
+    backup: true
+
+- name: Setting DEFAULT rampart vars
+  community.general.ini_file:
+    path: "{{ rampart }}"
+    section: DEFAULT
+    option: enabled
+    value: 1
+    state: present
+    no_extra_spaces: yes
+    mode: '0644'
+    backup: true
+
+- name: Setting DEFAULT siteinfo vars
+  community.general.ini_file:
+    path: "{{ siteinfo }}"
+    section: DEFAULT
+    option: enabled
+    value: 1
+    state: present
+    no_extra_spaces: yes
+    mode: '0644'
+    backup: true
+
+- name: Setting DEFAULT ssh vars
+  community.general.ini_file:
+    path: "{{ ssh }}"
+    section: DEFAULT
+    option: enabled
+    value: 1
+    state: present
+    no_extra_spaces: yes
+    mode: '0644'
+    backup: true
+
+- name: Setting DEFAULT tomcat vars
+  community.general.ini_file:
+    path: "{{ tomcat }}"
+    section: DEFAULT
+    option: enabled
+    value: 1
+    state: present
+    no_extra_spaces: yes
+    mode: '0644'
+    backup: true
+
+- name: Setting DEFAULT vacation vars
+  community.general.ini_file:
+    path: "{{ vacation }}"
+    section: DEFAULT
+    option: enabled
+    value: 1
+    state: present
+    no_extra_spaces: yes
+    mode: '0644'
+    backup: true
+
+- name: Setting DEFAULT apache vars
+  community.general.ini_file:
+    path: "{{ apache }}"
+    section: DEFAULT
+    option: enabled
+    value: 1
+    state: present
+    no_extra_spaces: yes
+    mode: '0644'
+    backup: true
+
+- name: Setting DEFAULT bandwidth vars
+  community.general.ini_file:
+    path: "{{ bandwidth }}"
+    section: DEFAULT
+    option: enabled
+    value: 1
+    state: present
+    no_extra_spaces: yes
+    mode: '0644'
+    backup: true
+
+- name: Setting DEFAULT cgroup vars
+  community.general.ini_file:
+    path: "{{ cgroup }}"
+    section: DEFAULT
+    option: enabled
+    value: 1
+    state: present
+    no_extra_spaces: yes
+    mode: '0644'
+    backup: true
+
+- name: Setting DEFAULT diskquota vars
+  community.general.ini_file:
+    path: "{{ diskquota }}"
+    section: DEFAULT
+    option: enabled
+    value: 1
+    state: present
+    no_extra_spaces: yes
+    mode: '0644'
+    backup: true
+
+- name: Setting DEFAULT files vars
+  community.general.ini_file:
+    path: "{{ files }}"
+    section: DEFAULT
+    option: enabled
+    value: 1
+    state: present
+    no_extra_spaces: yes
+    mode: '0644'
+    backup: true
+
+- name: Setting DEFAULT ipinfo vars
+  community.general.ini_file:
+    path: "{{ ipinfo }}"
+    section: DEFAULT
+    option: enabled
+    value: 1
+    state: present
+    no_extra_spaces: yes
+    mode: '0644'
+    backup: true
+
+- name: Setting DEFAULT logrotate vars
+  community.general.ini_file:
+    path: "{{ logrotate }}"
+    section: DEFAULT
+    option: enabled
+    value: 1
+    state: present
+    no_extra_spaces: yes
+    mode: '0644'
+    backup: true
+
+- name: Setting DEFAULT mail vars
+  community.general.ini_file:
+    path: "{{ mail }}"
+    section: DEFAULT
+    option: enabled
+    value: 1
+    state: present
+    no_extra_spaces: yes
+    mode: '0644'
+    backup: true
+
+- name: Setting DEFAULT mlist vars
+  community.general.ini_file:
+    path: "{{ mlist }}"
+    section: DEFAULT
+    option: enabled
+    value: 1
+    state: present
+    no_extra_spaces: yes
+    mode: '0644'
+    backup: true
+
+- name: Setting DEFAULT pgsql vars
+  community.general.ini_file:
+    path: "{{ pgsql }}"
+    section: DEFAULT
+    option: enabled
+    value: 1
+    state: present
+    no_extra_spaces: yes
+    mode: '0644'
+    backup: true
+
+- name: Setting DEFAULT reseller vars
+  community.general.ini_file:
+    path: "{{ reseller }}"
+    section: DEFAULT
+    option: enabled
+    value: 1
+    state: present
+    no_extra_spaces: yes
+    mode: '0644'
+    backup: true
+
+- name: Setting DEFAULT spamfilter vars
+  community.general.ini_file:
+    path: "{{ spamfilter }}"
+    section: DEFAULT
+    option: enabled
+    value: 1
+    state: present
+    no_extra_spaces: yes
+    mode: '0644'
+    backup: true
+
+- name: Setting DEFAULT ssl vars
+  community.general.ini_file:
+    path: "{{ ssl }}"
+    section: DEFAULT
+    option: enabled
+    value: 1
+    state: present
+    no_extra_spaces: yes
+    mode: '0644'
+    backup: true
+
+- name: Setting DEFAULT users vars
+  community.general.ini_file:
+    path: "{{ users }}"
+    section: DEFAULT
+    option: enabled
+    value: 1
+    state: present
+    no_extra_spaces: yes
+    mode: '0644'
+    backup: true
