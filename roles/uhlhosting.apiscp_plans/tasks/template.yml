@@ -1,0 +1,25 @@
+---
+- name: Recursively find template files 
+  find:
+    paths: "{{role_path}}/templates"
+    recurse: yes
+  register: templates_list
+
+- name: Ensure target directory exists
+  ansible.builtin.file:
+    dest: "/usr/local/apnscp/resources/templates/plans/{{plan.name}}/"
+    state: directory
+    mode: '0644'
+    group: apnscp
+    owner: apnscp
+
+# https://acozine.github.io/html/plugins/lookup/ini.html for future .ini checks
+- name: Ensure all template files are rendered
+  template:
+    src: '{{ item.path }}'
+    dest: "/usr/local/apnscp/resources/templates/plans/{{plan.name}}/{{item.path| basename| splitext | first}}"
+    mode: '0644'
+    group: apnscp
+    owner: apnscp
+    msg: 
+  with_items: "{{templates_list.files}}"

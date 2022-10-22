@@ -1,32 +1,7 @@
----
-aliases: /usr/local/apnscp/resources/templates/plans/basic/aliases
-auth: /usr/local/apnscp/resources/templates/plans/basic/auth
-billing: /usr/local/apnscp/resources/templates/plans/basic/billing
-crontab: /usr/local/apnscp/resources/templates/plans/basic/crontab
-dns: /usr/local/apnscp/resources/templates/plans/basic/dns
-ftp: /usr/local/apnscp/resources/templates/plans/basic/ftp
-ipinfo6: /usr/local/apnscp/resources/templates/plans/basic/ipinfo6
-metrics: /usr/local/apnscp/resources/templates/plans/basic/metrics
-logs: /usr/local/apnscp/resources/templates/plans/basic/logs
-mysql: /usr/local/apnscp/resources/templates/plans/basic/mysql
-rampart: /usr/local/apnscp/resources/templates/plans/basic/rampart
-siteinfo: /usr/local/apnscp/resources/templates/plans/basic/siteinfo
-ssh: /usr/local/apnscp/resources/templates/plans/basic/ssh
-tomcat: /usr/local/apnscp/resources/templates/plans/basic/tomcat
-vacation: /usr/local/apnscp/resources/templates/plans/basic/vacation
-apache: /usr/local/apnscp/resources/templates/plans/basic/apache
-bandwidth: /usr/local/apnscp/resources/templates/plans/basic/bandwidth
-cgroup: /usr/local/apnscp/resources/templates/plans/basic/cgroup
-diskquota: /usr/local/apnscp/resources/templates/plans/basic/diskquota
-files: /usr/local/apnscp/resources/templates/plans/basic/files
-ipinfo: /usr/local/apnscp/resources/templates/plans/basic/ipinfo
-logrotate: /usr/local/apnscp/resources/templates/plans/basic/logrotate
-mail: /usr/local/apnscp/resources/templates/plans/basic/mail
-mlist: /usr/local/apnscp/resources/templates/plans/basic/mlist
-pgsql: /usr/local/apnscp/resources/templates/plans/basic/pgsql
-reseller: /usr/local/apnscp/resources/templates/plans/basic/reseller
-spamfilter: /usr/local/apnscp/resources/templates/plans/basic/spamfilter
-ssl: /usr/local/apnscp/resources/templates/plans/basic/ssl
-users: /usr/local/apnscp/resources/templates/plans/basic/users
-enabled: 1
-disabled: 0
+plans:
+  - name: Managed
+    enabled: 1
+  - name: Developers 
+    enabled: 1
+  - name: basic 
+    enabled: 1

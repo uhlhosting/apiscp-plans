@@ -1,48 +1,5 @@
----
-  - name: Ensure target directory exists
-    ansible.builtin.file:
-      dest: "/usr/local/apnscp/resources/templates/plans/Developers/"
-      state: directory
-      mode: '0644'
-      group: apnscp
-      owner: apnscp
-# https://acozine.github.io/html/plugins/lookup/ini.html for future .ini checks
-  - name: Ensure all template files are rendered
-    ansible.builtin.template:
-      src: '{{ item.src }}'
-      dest: '{{ item.dest }}'
-      mode: '0644'
-      group: apnscp
-      owner: apnscp
-
-    loop:
-    - { src: 'templates/aliases.j2', dest: '/usr/local/apnscp/resources/templates/plans/Developers/aliases' }
-    - { src: 'templates/apache.j2', dest: '/usr/local/apnscp/resources/templates/plans/Developers/apache' }
-    - { src: 'templates/auth.j2', dest: '/usr/local/apnscp/resources/templates/plans/Developers/auth' }
-    - { src: 'templates/bandwidth.j2', dest: '/usr/local/apnscp/resources/templates/plans/Developers/bandwidth' }
-    - { src: 'templates/billing.j2', dest: '/usr/local/apnscp/resources/templates/plans/Developers/billing' }
-    - { src: 'templates/cgroup.j2', dest: '/usr/local/apnscp/resources/templates/plans/Developers/cgroup' }
-    - { src: 'templates/crontab.j2', dest: '/usr/local/apnscp/resources/templates/plans/Developers/crontab' }
-    - { src: 'templates/diskquota.j2', dest: '/usr/local/apnscp/resources/templates/plans/Developers/diskquota' }
-    - { src: 'templates/dns.j2', dest: '/usr/local/apnscp/resources/templates/plans/Developers/dns' }
-    - { src: 'templates/files.j2', dest: '/usr/local/apnscp/resources/templates/plans/Developers/files' }
-    - { src: 'templates/ftp.j2', dest: '/usr/local/apnscp/resources/templates/plans/Developers/ftp' }
-    - { src: 'templates/ipinfo.j2', dest: '/usr/local/apnscp/resources/templates/plans/Developers/ipinfo' }
-    - { src: 'templates/ipinfo6.j2', dest: '/usr/local/apnscp/resources/templates/plans/Developers/ipinfo6' }
-    - { src: 'templates/logrotate.j2', dest: '/usr/local/apnscp/resources/templates/plans/Developers/logrotate' }
-    - { src: 'templates/logs.j2', dest: '/usr/local/apnscp/resources/templates/plans/Developers/logs' }
-    - { src: 'templates/mail.j2', dest: '/usr/local/apnscp/resources/templates/plans/Developers/mail' }
-    - { src: 'templates/metrics.j2', dest: '/usr/local/apnscp/resources/templates/plans/Developers/metrics' }
-    - { src: 'templates/mlist.j2', dest: '/usr/local/apnscp/resources/templates/plans/Developers/mlist' }
-    - { src: 'templates/mysql.j2', dest: '/usr/local/apnscp/resources/templates/plans/Developers/mysql' }
-    - { src: 'templates/pgsql.j2', dest: '/usr/local/apnscp/resources/templates/plans/Developers/pgsql' }
-    - { src: 'templates/rampart.j2', dest: '/usr/local/apnscp/resources/templates/plans/Developers/rampart' }
-    - { src: 'templates/reseller.j2', dest: '/usr/local/apnscp/resources/templates/plans/Developers/reseller' }
-    - { src: 'templates/siteinfo.j2', dest: '/usr/local/apnscp/resources/templates/plans/Developers/siteinfo' }
-    - { src: 'templates/spamfilter.j2', dest: '/usr/local/apnscp/resources/templates/plans/Developers/spamfilter' }
-    - { src: 'templates/ssh.j2', dest: '/usr/local/apnscp/resources/templates/plans/Developers/ssh' }
-    - { src: 'templates/ssl.j2', dest: '/usr/local/apnscp/resources/templates/plans/Developers/ssl' }
-    - { src: 'templates/tomcat.j2', dest: '/usr/local/apnscp/resources/templates/plans/Developers/tomcat' }
-    - { src: 'templates/users.j2', dest: '/usr/local/apnscp/resources/templates/plans/Developers/users' }
-    - { src: 'templates/vacation.j2', dest: '/usr/local/apnscp/resources/templates/plans/Developers/vacation' }
-
+# ---
+- include_tasks: template.yml
+  loop_control:
+    loop_var: plan
+  with_items: "{{plans}}"
