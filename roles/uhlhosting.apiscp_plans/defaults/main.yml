@@ -28,3 +28,5 @@ reseller: /usr/local/apnscp/resources/templates/plans/basic/reseller
 spamfilter: /usr/local/apnscp/resources/templates/plans/basic/spamfilter
 ssl: /usr/local/apnscp/resources/templates/plans/basic/ssl
 users: /usr/local/apnscp/resources/templates/plans/basic/users
+enabled: 1
+disabled: 0

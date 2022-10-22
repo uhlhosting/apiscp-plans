@@ -1,4 +1,8 @@
 ---
+- name: Templates for ApisCP plans
+  hosts: test
+  tasks:
+
   - name: Ensure target directory exists
     ansible.builtin.file:
       dest: "/usr/local/apnscp/resources/templates/plans/Developers/"
@@ -45,4 +49,3 @@
     - { src: 'templates/tomcat.j2', dest: '/usr/local/apnscp/resources/templates/plans/Developers/tomcat' }
     - { src: 'templates/users.j2', dest: '/usr/local/apnscp/resources/templates/plans/Developers/users' }
     - { src: 'templates/vacation.j2', dest: '/usr/local/apnscp/resources/templates/plans/Developers/vacation' }
-

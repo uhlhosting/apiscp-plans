@@ -1,0 +1,13 @@
+---
+- name: Playbook ApisCP Role plans
+  hosts: test
+  gather_facts: true
+  become: true
+
+  vars_files:
+    - defaults/main.yml
+    - vars/main.yml
+
+  tasks:
+    - name: Import main task
+      ansible.builtin.import_tasks: tasks/main.yml

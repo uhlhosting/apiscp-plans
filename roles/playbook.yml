@@ -1,9 +1,0 @@
----
-- hosts: test
-  gather_facts: true
-  become: true
-  vars_files:
-    - defaults/main.yml
-    - vars/main.yml
-  tasks:
-    - import_tasks: tasks/main.yml
