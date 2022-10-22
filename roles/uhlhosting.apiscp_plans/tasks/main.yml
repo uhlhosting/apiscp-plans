@@ -1,11 +1,5 @@
 ---
 
-- name: Restarting ApisCP
-  ansible.builtin.systemd:
-    state: restarted
-    daemon_reload: true
-    name: apiscp
-
 - name: Setting DEFAULT aliases vars
   community.general.ini_file:
     path: "{{ aliases }}"
@@ -324,3 +318,9 @@
     no_extra_spaces: yes
     mode: '0644'
     backup: true
+
+- name: Restarting ApisCP
+  ansible.builtin.systemd:
+    state: restarted
+    daemon_reload: true
+    name: apiscp
