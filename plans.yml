@@ -1,6 +1,5 @@
 - name: Play for modifying ApicCP plans
-  hosts: all
-  connection: local
+  hosts: test
   become: true
   gather_facts: true
   roles:
