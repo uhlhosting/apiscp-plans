@@ -1,0 +1,42 @@
+---
+- name: Templates for ApisCP plans
+  hosts: test
+  tasks:
+  - name: Ensure all template files are rendered
+    ansible.builtin.template:
+      src: '{{ item.src }}'
+      dest: '{{ item.dest }}'
+      mode: '0644'
+      backup: yes
+    # Define a 'list of hashes' for the loop module to iterate over
+    # Each item has a 'src' and a 'dest'
+    loop:
+    - { src: 'templates/aliases.j2', dest: '/usr/local/apnscp/resources/templates/plans/basic/aliases' }
+    - { src: 'templates/apache.j2', dest: '/usr/local/apnscp/resources/templates/plans/basic/apache' }
+    - { src: 'templates/auth.j2', dest: '/usr/local/apnscp/resources/templates/plans/basic/auth' }
+    - { src: 'templates/bandwidth.j2', dest: '/usr/local/apnscp/resources/templates/plans/basic/bandwidth' }
+    - { src: 'templates/billing.j2', dest: '/usr/local/apnscp/resources/templates/plans/basic/billing' }
+    - { src: 'templates/cgroup.j2', dest: '/usr/local/apnscp/resources/templates/plans/basic/cgroup' }
+    - { src: 'templates/crontab.j2', dest: '/usr/local/apnscp/resources/templates/plans/basic/crontab' }
+    - { src: 'templates/diskquota.j2', dest: '/usr/local/apnscp/resources/templates/plans/basic/diskquota' }
+    - { src: 'templates/dns.j2', dest: '/usr/local/apnscp/resources/templates/plans/basic/dns' }
+    - { src: 'templates/files.j2', dest: '/usr/local/apnscp/resources/templates/plans/basic/files' }
+    - { src: 'templates/ftp.j2', dest: '/usr/local/apnscp/resources/templates/plans/basic/ftp' }
+    - { src: 'templates/ipinfo.j2', dest: '/usr/local/apnscp/resources/templates/plans/basic/ipinfo' }
+    - { src: 'templates/ipinfo6.j2', dest: '/usr/local/apnscp/resources/templates/plans/basic/ipinfo6' }
+    - { src: 'templates/logrotate.j2', dest: '/usr/local/apnscp/resources/templates/plans/basic/logrotate' }
+    - { src: 'templates/logs.j2', dest: '/usr/local/apnscp/resources/templates/plans/basic/logs' }
+    - { src: 'templates/mail.j2', dest: '/usr/local/apnscp/resources/templates/plans/basic/mail' }
+    - { src: 'templates/metrics.j2', dest: '/usr/local/apnscp/resources/templates/plans/basic/metrics' }
+    - { src: 'templates/mlist.j2', dest: '/usr/local/apnscp/resources/templates/plans/basic/mlist' }
+    - { src: 'templates/mysql.j2', dest: '/usr/local/apnscp/resources/templates/plans/basic/mysql' }
+    - { src: 'templates/pgsql.j2', dest: '/usr/local/apnscp/resources/templates/plans/basic/pgsql' }
+    - { src: 'templates/rampart.j2', dest: '/usr/local/apnscp/resources/templates/plans/basic/rampart' }
+    - { src: 'templates/reseller.j2', dest: '/usr/local/apnscp/resources/templates/plans/basic/reseller' }
+    - { src: 'templates/siteinfo.j2', dest: '/usr/local/apnscp/resources/templates/plans/basic/siteinfo' }
+    - { src: 'templates/spamfilter.j2', dest: '/usr/local/apnscp/resources/templates/plans/basic/spamfilter' }
+    - { src: 'templates/ssh.j2', dest: '/usr/local/apnscp/resources/templates/plans/basic/ssh' }
+    - { src: 'templates/ssl.j2', dest: '/usr/local/apnscp/resources/templates/plans/basic/ssl' }
+    - { src: 'templates/tomcat.j2', dest: '/usr/local/apnscp/resources/templates/plans/basic/tomcat' }
+    - { src: 'templates/users.j2', dest: '/usr/local/apnscp/resources/templates/plans/basic/users' }
+    - { src: 'templates/vacation.j2', dest: '/usr/local/apnscp/resources/templates/plans/basic/vacation' }
