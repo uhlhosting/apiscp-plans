@@ -3,12 +3,22 @@
   hosts: test
   tasks:
 
+  - name: Ensure target directory exists
+    ansible.builtin.file:
+      dest: "/usr/local/apnscp/resources/templates/plans/Developers/"
+      state: directory
+      mode: '0644'
+      group: apnscp
+      owner: apnscp
+
   - name: Ensure all template files are rendered
     ansible.builtin.template:
       src: '{{ item.src }}'
       dest: '{{ item.dest }}'
       mode: '0644'
-      backup: yes
+      group: apnscp
+      owner: apnscp
+
     loop:
     - { src: 'templates/aliases.j2', dest: '/usr/local/apnscp/resources/templates/plans/Developers/aliases' }
     - { src: 'templates/apache.j2', dest: '/usr/local/apnscp/resources/templates/plans/Developers/apache' }
