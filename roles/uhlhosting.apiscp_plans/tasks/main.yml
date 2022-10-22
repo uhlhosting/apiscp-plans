@@ -1,4 +1,4 @@
-# ---
+---
 - include_tasks: template.yml
   loop_control:
     loop_var: plan
