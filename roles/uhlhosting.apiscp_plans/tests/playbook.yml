@@ -5,9 +5,9 @@
   become: true
 
   vars_files:
-    - defaults/main.yml
-    - vars/main.yml
+    - ../defaults/main.yml
+    - ../vars/main.yml
 
   tasks:
     - name: Import main task
-      ansible.builtin.import_tasks: tasks/main.yml
+      ansible.builtin.import_tasks: ../tasks/main.yml
